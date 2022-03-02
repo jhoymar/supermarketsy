@@ -1,12 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace supermarkets
+﻿namespace supermarketsy
 {
-    internal class FixedPriceProduct
+    internal class FixedPriceProduct : Product
+
+{
+    public override decimal GetValueToPay()
     {
+        return Price + (Price * (decimal)Tax);
+    }
+
+
+
+    public override string ToString()
+    {
+        return $"{base.ToString()}" +
+            $"\n\tValue.......:{$"{GetValueToPay():C2}",13}";
     }
 }
+}
+

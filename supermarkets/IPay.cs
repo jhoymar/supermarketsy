@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace supermarkets
+﻿namespace supermarketsy
 {
     internal class IPay
     {
+        public void GetValueToPay()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

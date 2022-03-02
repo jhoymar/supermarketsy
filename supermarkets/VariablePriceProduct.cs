@@ -1,12 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using supermarketsy;
 
-namespace supermarkets
+namespace supermarket
 {
-    internal class VariablePriceProduct
+    internal class VariablePriceProduct : Product
     {
+        public string Measurement { get; set; }
+        public double Quantity { get; set; }
+
+        private string asistent { get; set; }
+
+
+        public override decimal GetValueToPay()
+        {
+            decimal Assistant;
+            Assistant = (Price * (decimal)Quantity);
+            return (Price * (decimal)Quantity) * (decimal)Tax;
+        }
+
+        public override string ToString()
+        {
+            return $"{base.ToString()}" +
+              $"\n\tMeasurement.:{$"{Measurement}",13}" +
+              $"\n\tQuantity....:{$"{Quantity:N2}",13}" +
+              $"\n\tValue.......:{$"{GetValueToPay():C2}",13}";
+
+        }
     }
 }
